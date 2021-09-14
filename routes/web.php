@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\PersoonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('persoon/{id}/delete', [App\Http\Controllers\PersoonController::class, 'verwijder']);
+Route::resource('persoon',  App\Http\Controllers\PersoonController::class);
+

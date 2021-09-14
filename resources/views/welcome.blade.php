@@ -7,6 +7,7 @@
             DaisyUI
           </span>
   </div> 
+
   <div class="flex-none hidden px-2 mx-2 lg:flex">
     <div class="flex items-stretch">
       <a class="btn btn-ghost btn-sm rounded-btn">
@@ -39,6 +40,7 @@
       </a>
     </div>
   </div> 
+
   <div class="flex-none">
     <button class="btn btn-square btn-ghost">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">           
@@ -47,6 +49,41 @@
     </button>
   </div>
 </div>
+
+<div class="flex">
+  <a href="persoon" class="formknop">overzicht</a>
+  <a href="persoon/create" class="formknop">nieuw</a>
+</div>
+
+
+@php
+
+  $data = array(
+    'id' => 0,
+    'voornaam' => '',
+    'familienaam' => '',
+    'straat' => '',
+    'huisnummer' => '',
+    'bus' => '',
+    'postcode' => '',
+    'gemeente' => '',
+    'telefoon' => '',
+    'gsm' => '',
+    'email' => '',
+  );
+
+  $extra = array(
+    'isAdmin' => 1,
+    'client_id' => 0,
+  );
+@endphp
+<div class="container-fluid bg-yellow-100" style="width:100%">
+  <div class="flex justify-center text-center text-4xl font-bold ">Formulier</div>
+  <formulier
+     :data="{{ json_encode($data) }}"
+     :extra="{{ json_encode($extra) }}" />
+</div>
+
 <div class="container-fluid" style="width:100%">
     <h1 class="flex text-center">welkom</h1>
     <example-component></example-component>
